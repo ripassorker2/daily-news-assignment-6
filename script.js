@@ -18,13 +18,38 @@ let displayAllCatagoryNews = (allCatagory) => {
 
 }
 let loadedSingleCatagoryDetails = (id) => {
-    console.log(id)
-    fetch(`https://openapi.programming-hero.com/api/news/category/${id}`)
+    // console.log(id)
+    fetch(`https://openapi.programming-hero.com/api/news/category/0${id}`)
         .then(res => res.json())
         .then(data => displaySingleCatagoryNews(data.data))
 }
 
-let displaySingleCatagoryNews = (siglr) => {
+let displaySingleCatagoryNews = (singleCatagoryNews) => {
+    let perNewsContainer = document.getElementById('per-news');
+    perNewsContainer.innerHTML = '';
+    console.log(singleCatagoryNews)
+    singleCatagoryNews.forEach(info => {
+        console.log(info)
+        let div = document.createElement('div');
+        div.classList.add('col-md-6',);
+        div.innerHTML = `
+        <div class="card mb-3" style="max-width: auto;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="${info.image_url}" class="img-fluid h-100  rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">${info.title}</h5>
+                    <p class="card-text">${info.details.slice(0, 200)}...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+        `
+        perNewsContainer.appendChild(div)
+    });
 
 }
 
