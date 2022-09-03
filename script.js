@@ -30,7 +30,8 @@ let loadedSingleCatagoryDetails = (id) => {
 
 
 let displaySingleCatagoryNews = (singleCatagoryNews) => {
-
+    // ----------------- short-----------------
+    singleCatagoryNews.sort((a, b) => b.total_view - a.total_view)
     let perNewsContainer = document.getElementById('per-news');
     perNewsContainer.innerHTML = '';
     singleCatagoryNews.forEach(info => {
@@ -47,7 +48,7 @@ let displaySingleCatagoryNews = (singleCatagoryNews) => {
                     <h5 class="card-title text-info fw-bold">${info.title}</h5>
                     <p class="card-text">${info.details.slice(0, 200)}...</p>
             </div>
-            <div class="container d-flex justify-content-between my-5 flex-flex-wrap card-footer">
+            <div class="container d-flex justify-content-between pt-3 flex-flex-wrap card-footer">
                 <div class="d-flex align-items-center ">
                     <img class="rounded-circle " style="height: 60px; width: 60px; " src="${info.author.img}" alt="">
                     <div class="ps-3">
@@ -59,7 +60,7 @@ let displaySingleCatagoryNews = (singleCatagoryNews) => {
                     <p> <i class="fa-regular fa-eye"></i> ${info.total_view ? info.total_view : 'No viwes'}M</p>
                 </div>
                 <div class="pt-3">
-                    <p> <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></i><i class="fa-regular fa-star"></i> ${info.rating.number}</p>
+                    <p> <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></i><i class="fa-regular fa-star"></i></p>
                 </div>
                 <div class="pt-3 text-info">
                     <button onclick="loadedNewsDetails('${info._id}')" class="btn btn-info"  data-bs-toggle="modal" data-bs-target="#loadedNewsDetails" >More details <i class="fa-solid fa-arrow-right"></i></button>
