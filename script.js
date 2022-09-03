@@ -32,7 +32,9 @@ let loadedSingleCatagoryDetails = (id) => {
 let displaySingleCatagoryNews = (singleCatagoryNews) => {
     // ----------------- short-----------------
     singleCatagoryNews.sort((a, b) => b.total_view - a.total_view)
-
+    // --------------------added news amount-----------------/
+    let newsAmount = document.getElementById('news-amount')
+    newsAmount.innerText = singleCatagoryNews.length
     let perNewsContainer = document.getElementById('per-news');
     perNewsContainer.innerHTML = '';
     singleCatagoryNews.forEach(info => {
@@ -53,18 +55,18 @@ let displaySingleCatagoryNews = (singleCatagoryNews) => {
                 <div class="d-flex align-items-center ">
                     <img class="rounded-circle " style="height: 60px; width: 60px; " src="${info.author.img}" alt="">
                     <div class="ps-3">
-                        <h6  class="ps-2" >${info.author.name ? info.author.name : 'No foound author name'}</h6>
+                        <strong  class="ps-2" >${info.author.name ? info.author.name : 'No foound author name'}</strong>
                         <p  class="ps-2" >${info.author.published_date ? info.author.published_date : 'No faound date'}</p>
                     </div>
                 </div>
                 <div class="pt-3 fw-bold">
                     <p> <i class="fa-regular fa-eye"></i> ${info.total_view ? info.total_view : 'No viwes'}M</p>
                 </div>
-                <div class="pt-3">
+                <div class="pt-3 text-warning">
                     <p> <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></i><i class="fa-regular fa-star"></i></p>
                 </div>
                 <div class="pt-3 text-info">
-                    <button onclick="loadedNewsDetails('${info._id}')" class="btn btn-info"  data-bs-toggle="modal" data-bs-target="#loadedNewsDetails" >More details <i class="fa-solid fa-arrow-right"></i></button>
+                    <button onclick="loadedNewsDetails('${info._id}')" class="btn btn-info"  data-bs-toggle="modal" data-bs-target="#loadedNewsDetails" > <i class="fa-solid fa-arrow-right"></i></button>
             </div>
             </div>
             </div>
