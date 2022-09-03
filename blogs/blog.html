@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Daily news blogs</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- ------------------font awesome--------------------- -->
+    <script src="https://kit.fontawesome.com/2dc755ba6a.js" crossorigin="anonymous"></script>
+    <!-- -------------------google font--------------------- -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,500;1,500&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Josefin Sans', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <!-- ------------------ navbar ---------------- -->
+        <nav class="navbar bg-light">
+            <div class="container border-bottom p-3">
+                <a class="navbar-brand fw-bold fs-4">Daily <span class="text-info">News</span> </a>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-primary" type="submit">Search</button>
+                </form>
+                <div class=" text-decoration-none  fs-4 ">
+                    <a class=" text-decoration-none p-2 border-bottom" href="">News</a>
+                    <a class=" text-decoration-none pe-3 text-black" href="">Blogs</a>
+                    <img class="rounded-circle img-fluid " src="img/img1.jpg" alt="">
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+
+    <!-- -----------------------  blog--------------------- -->
+    <div class="container py-5">
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        What is the different of var, let and const??
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <p>The scope of a var variable is functional scope. The scope of a let variable is block scope.
+                            The scope of a const variable is block scope. It can be updated and re-declared into the
+                            scope.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        What is the different of arrow function and regular function??
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <p>Regular functions created using function declarations or expressions are constructible and
+                            callable. Since regular functions are constructible, they can be called using the new
+                            keyword. However, the arrow functions are only callable and not constructible, i.e arrow
+                            functions can never be used as constructor functions.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        What is the different of map, forEach, filter and find ??
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <p> <strong>.forEach() : </strong>.forEach(), is used to execute the same code on every element
+                            in an array but does not change the array and it returns undefined.</p>
+                        <p> <strong>.map() :</strong> .map() executes the same code on every element in an array and
+                            returns a new array with the updated elements.</p>
+                        <p> <strong>.filter() :</strong> .filter() checks every element in an array to see if it meets a
+                            certain criteria and returns a new array with the elements that return truthy for the
+                            criteria.</p>
+                        <p> <strong>.finf() :</strong> find() method returns the value of the first element that passes
+                            a test. The find() method executes a function for each array element. The find() method
+                            returns undefined if no elements are found. The find() method does not execute the function
+                            for empty elements.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        Why you can use templet string ??
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <p>Template literals provide an easy way to interpolate variables and expressions into strings.
+                            The method is called string interpolation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ---------------------footer--------------------  -->
+    <footer class="container-fluid p-5 bg-dark">
+        <h6 class="text-white text-center my-4">@ Copyright 2022 daily news !!</h6>
+
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
