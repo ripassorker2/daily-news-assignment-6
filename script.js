@@ -53,8 +53,8 @@ let displaySingleCatagoryNews = (singleCatagoryNews) => {
                 <div class="d-flex align-items-center ">
                     <img class="rounded-circle " style="height: 60px; width: 60px; " src="${info.author.img}" alt="">
                     <div class="ps-3">
-                        <h6  class="ps-2" >${info.author.name}</h6>
-                        <p  class="ps-2" >${info.author.published_date}</p>
+                        <h6  class="ps-2" >${info.author.name ? info.author.name : 'No foound author name'}</h6>
+                        <p  class="ps-2" >${info.author.published_date ? info.author.published_date : 'No faound date'}</p>
                     </div>
                 </div>
                 <div class="pt-3 fw-bold">
