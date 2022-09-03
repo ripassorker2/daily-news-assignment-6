@@ -49,7 +49,7 @@ let displaySingleCatagoryNews = (singleCatagoryNews) => {
             <div class="col-md-8">
                 <div class="card-body">
                     <h5 class="card-title text-info fw-bold">${info.title}</h5>
-                    <p class="card-text">${info.details.slice(0, 200)}...</p>
+                    <p class="card-text">${info.details.slice(0, 280)}...</p>
             </div>
             <div class="container d-flex justify-content-between pt-3 flex-flex-wrap card-footer">
                 <div class="d-flex align-items-center ">
