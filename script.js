@@ -31,7 +31,7 @@ let displaySingleCatagoryNews = (singleCatagoryNews) => {
     singleCatagoryNews.forEach(info => {
         console.log(info)
         let div = document.createElement('div');
-        div.classList.add('col-md-6',);
+        div.classList.add('col-md-12',);
         div.innerHTML = `
         <div class="card mb-3" style="max-width: auto;">
         <div class="row g-0">
@@ -40,9 +40,27 @@ let displaySingleCatagoryNews = (singleCatagoryNews) => {
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title">${info.title}</h5>
+                    <h5 class="card-title fw-bold">${info.title}</h5>
                     <p class="card-text">${info.details.slice(0, 200)}...</p>
                 </div>
+                <div class="container d-flex justify-content-between my-5 flex-flex-wrap">
+                <div class="d-flex align-items-center ">
+                    <img class="rounded-circle " style="height: 60px; width: 60px; " src="${info.author.img}" alt="">
+                    <div class="ps-3">
+                        <h6  class="ps-2" >${info.author.name}</h6>
+                        <p  class="ps-2" >${info.author.published_date}</p>
+                    </div>
+                </div>
+                <div class="pt-3 fw-bold">
+                    <p> <i class="fa-regular fa-eye"></i> ${info.total_view ? info.total_view : 'No viwes'}M</p>
+                </div>
+                <div class="pt-3">
+                    <p> <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></i><i class="fa-regular fa-star"></i> ${info.rating.number}</p>
+                </div>
+                <div class="pt-3 text-info">
+                    <h6>More details <i class="fa-solid fa-arrow-right"></i></h6>
+                </div>
+            </div>
             </div>
         </div>
     </div>
