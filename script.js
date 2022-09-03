@@ -9,11 +9,11 @@ let loadedAllCatagoryNews = () => {
 let displayAllCatagoryNews = (allCatagory) => {
     let allCatagoryName = document.getElementById('catagory-container');
     allCatagory.forEach(catagory => {
-        let singleCountryName = document.createElement('div')
-        singleCountryName.innerHTML = `
+        let singleCatagoryName = document.createElement('div')
+        singleCatagoryName.innerHTML = `
             <a onclick="loadedSingleCatagoryDetails(${catagory.category_id})"  class="fs-5 px-3 text-decoration-none text-primary fw-bold" href="#">${catagory.category_name}</a>
             `
-        allCatagoryName.appendChild(singleCountryName)
+        allCatagoryName.appendChild(singleCatagoryName)
     });
 }
 
@@ -32,6 +32,7 @@ let loadedSingleCatagoryDetails = (id) => {
 let displaySingleCatagoryNews = (singleCatagoryNews) => {
     // ----------------- short-----------------
     singleCatagoryNews.sort((a, b) => b.total_view - a.total_view)
+
     let perNewsContainer = document.getElementById('per-news');
     perNewsContainer.innerHTML = '';
     singleCatagoryNews.forEach(info => {
